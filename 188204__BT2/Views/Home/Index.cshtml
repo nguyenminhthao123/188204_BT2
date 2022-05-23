@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<section>
+    <ul class="breadcrumb">
+        <li><a>Đồ chơi</a> </li>
+        <li><a>Đồ chơi lego </a></li>
+    </ul>
+    <div class="detail">
+        <div class="detail__left">
+            <div class="box_fotorama">
+                <img class="main-img" src=" @ViewBag.productDetail.Image" />
+                <div class="gallery">
+                    @foreach (var i in @ViewBag.productDetail.Imagethump)
+                    {
+                        <img src="@i.Img" />
+                    }
+
+                </div>
+                <div class="count">
+                    <span class="count-current">1</span>
+                    <span class="count-total">5</span>
+                </div>
+                <div class="prev-next-btn">
+                    <span class="prev-btn"><i class="fa-solid fa-angle-left"></i></span>
+                    <span class="next-btn"><i class="fa-solid fa-angle-right"></i></span>
+                </div>
+                <div class="zoom">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="info__product">
+                <div class="article__content">
+                    <h2 class="article__content__title">thông tin sản phẩm</h2>
+                    <h3 >Đặc điểm nổi bật</h3>
+                    <ul>
+                        @foreach (var i in @ViewBag.productDetail.ProductFeatures)
+                        {
+                            <li>
+                               @i.NameFeature
+                            </li>
+                        }
+                    </ul>
+                    <h3>Hướng dẫn sử dụng</h3>
+                    <ul>
+                        @foreach(var i in @ViewBag.productDetail.UseManual)
+                         {
+                            <li>
+                                @i.context
+                            </li>
+                         }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="detail__right">
+            <div class="box__productInfor">
+                <div class="detail-title">
+                    <h3>@ViewBag.productDetail.Name</h3>
+                </div>
+                <div class="detail-top">
+                    <div class="detail-price">
+                        <span class="price-current">@ViewBag.productDetail.Price đ</span>
+                        <span class="price-old">@ViewBag.productDetail.Price đ</span>
+                        <span class="price-percent">-@ViewBag.productDetail.Discount %</span>
+                    </div>
+                    <div class="product-code">#258922</div>
+                </div>
+                <div class="box-promo">
+                    <p class="box-promo-text">Khuyến mãi (Đến 31/05)</p>
+                    <ul class="box-promo-list">
+                        <li class="divb">Nhập mã AVAKID giảm 10% tối đa 100.000đ cho đơn hàng từ 300.000đ trở lên khi thanh toán qua Ví Moca trên ứng dụng Grab <a href="#">(click xem chi tiết)</a></li>
+                    </ul>
+                </div>
+                <div class="detail-btn">
+                    <a class="btn btn-addCard">Thêm vào giỏ</a>
+                    <a class="btn btn-viewStort">Xem của hàng còn hàng</a>
+                </div>
+            </div>
+            <ul class="policy">
+                @foreach (var i in @ViewBag.productDetail.Policy)
+                {
+                    <li>
+                        <i class="@i.Icon"></i>
+                        <p>@i.NamePolicy</p>
+                    </li>
+                }
+            </ul>
+            <div class="info__detail">
+                <p class="info__title">Thông tin chi tiết</p>
+                <div class="info-content">
+                    <ul class="info-article">
+                        @foreach (var i in @ViewBag.productDetail.InfoTeach)
+                        {
+                            <li>
+                                <p class="text1">@i.NameInfo</p>
+                                <p class="text2">@i.ValueInfo</p>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="detail-product">
+        <p class="detail-product-title">Đồ chơi khác</p>
+        <div class="product-Card">
+            @foreach (var i in ViewBag.procutList)
+            {
+               
+                <div class="card-item">
+                    <img src="@i.Image" />
+                    <div class="card-content">
+                        <h3>@i.Name</h3>
+                        <p class="price-current">@i.Price đ</p>
+                        <div class="boxprice">
+                            <p class="price-old">@i.Price</p>
+                            <span class="percent"> -@i.Discount %</span>
+                        </div>
+                    </div>
+                    <div class="btn-buy">Chọn mua</div>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+    <div class="comment">
+        <b class="cmt-title">Hỏi đáp về Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 (297 chi tiết)</b>
+        <form>
+            <div class="cmt-text">
+                <textarea></textarea>
+            </div>
+        </form>
+    </div>
+</section>
