@@ -35,3 +35,5 @@ D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\188204__BT2
 D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\188204__BT2.pdb
 D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\188204__BT2.genruntimeconfig.cache
 D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\188204__BT2.csproj.CopyComplete
+D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\Razor\Views\Layout\footer.cshtml.g.cs
+D:\COMPANY MWG\Tesst\188204__BT2\188204__BT2\obj\Debug\netcoreapp3.1\Razor\Views\Layout\header.cshtml.g.cs

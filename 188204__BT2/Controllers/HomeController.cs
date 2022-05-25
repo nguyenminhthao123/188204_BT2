@@ -127,9 +127,10 @@ namespace _188204__BT2.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.procutList = GetProductList();
-            ViewBag.productDetail = GetProductDetail();
-            return View();
+            CollectionDataModel model = new CollectionDataModel();
+            model.ProductDetail = GetProductDetail();
+            model.ProductList = GetProductList();
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

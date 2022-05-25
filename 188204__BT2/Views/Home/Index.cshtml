@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model _188204__BT2.Models.CollectionDataModel;
 
 <section>
     <ul class="breadcrumb">
@@ -10,9 +11,9 @@
     <div class="detail">
         <div class="detail__left">
             <div class="box_fotorama">
-                <img class="main-img" src=" @ViewBag.productDetail.Image" />
+                <img class="main-img" src=" @Model.ProductDetail.Image" />
                 <div class="gallery">
-                    @foreach (var i in @ViewBag.productDetail.Imagethump)
+                    @foreach (var i in @Model.ProductDetail.Imagethump)
                     {
                         <img src="@i.Img" />
                     }
@@ -33,23 +34,23 @@
             <div class="info__product">
                 <div class="article__content">
                     <h2 class="article__content__title">thông tin sản phẩm</h2>
-                    <h3 >Đặc điểm nổi bật</h3>
+                    <h3>Đặc điểm nổi bật</h3>
                     <ul>
-                        @foreach (var i in @ViewBag.productDetail.ProductFeatures)
+                        @foreach (var i in Model.ProductDetail.ProductFeatures)
                         {
                             <li>
-                               @i.NameFeature
+                                @i.NameFeature
                             </li>
                         }
                     </ul>
                     <h3>Hướng dẫn sử dụng</h3>
                     <ul>
-                        @foreach(var i in @ViewBag.productDetail.UseManual)
-                         {
+                        @foreach (var i in @Model.ProductDetail.UseManual)
+                        {
                             <li>
                                 @i.context
                             </li>
-                         }
+                        }
                     </ul>
                 </div>
             </div>
@@ -57,13 +58,13 @@
         <div class="detail__right">
             <div class="box__productInfor">
                 <div class="detail-title">
-                    <h3>@ViewBag.productDetail.Name</h3>
+                    <h3>@Model.ProductDetail.Name</h3>
                 </div>
                 <div class="detail-top">
                     <div class="detail-price">
-                        <span class="price-current">@ViewBag.productDetail.Calcula()đ</span>
-                        <span class="price-old">@ViewBag.productDetail.FormatPrice()đ</span>
-                        <span class="price-percent">-@ViewBag.productDetail.Discount %</span>
+                        <span class="price-current">@Model.ProductDetail.Calcula()đ</span>
+                        <span class="price-old">@Model.ProductDetail.FormatPrice()đ</span>
+                        <span class="price-percent">-@Model.ProductDetail.Discount %</span>
                     </div>
                     <div class="product-code">#258922</div>
                 </div>
@@ -79,7 +80,7 @@
                 </div>
             </div>
             <ul class="policy">
-                @foreach (var i in @ViewBag.productDetail.Policy)
+                @foreach (var i in @Model.ProductDetail.Policy)
                 {
                     <li>
                         <i class="@i.Icon"></i>
@@ -91,7 +92,7 @@
                 <p class="info__title">Thông tin chi tiết</p>
                 <div class="info-content">
                     <ul class="info-article">
-                        @foreach (var i in @ViewBag.productDetail.InfoTeach)
+                        @foreach (var i in Model.ProductDetail.InfoTeach)
                         {
                             <li>
                                 <p class="text1">@i.NameInfo</p>
@@ -107,7 +108,7 @@
     <div class="detail-product">
         <p class="detail-product-title">Đồ chơi khác</p>
         <div class="product-Card">
-            @foreach (var i in ViewBag.procutList)
+            @foreach (var i in @Model.ProductList)
             {
 
                 <div class="card-item">
@@ -123,10 +124,6 @@
                     <div class="btn-buy">Chọn mua</div>
                 </div>
             }
-
-
-
-
         </div>
     </div>
     <div class="comment">
@@ -167,3 +164,50 @@
         </form>
     </div>
 </section>
+<div class="commitment">
+    <ul>
+        <li>
+            <div class="li-icon">
+                <i class="icon-chinhhang"></i>
+            </div>
+            <div class="li-content">
+                <p>
+                    <span>
+                        100% Sản phẩm chính hãng
+                    </span>
+                    <br />
+                    hơn 100 thương hiệu nổi tiếng
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="li-icon">
+                <i class="icon-doitra"></i>
+            </div>
+            <div class="li-content">
+                <p>
+                    <span>1 Đổi 1 Trong Vòng 1 Tháng</span>
+                    <span class="li-note">(Tùy sản phẩm)</span>
+                    <br />
+                    Tại 49 cửa hàng trên toàn quốc
+                </p>
+                <a>Xem chi tiết</a>
+            </div>
+        </li>
+        <li>
+            <div class="li-icon">
+                <i class="icon-giaohang"></i>
+            </div>
+            <div class="li-content">
+                <p>
+                    <span>
+                        Miễn phí giao hàng
+                    </span>
+                    <br />
+                    cho đơn hàng 500.000đ trong 10km đầu tiên
+                </p>
+                <a>Xem chi tiết</a>
+            </div>
+        </li>
+    </ul>
+</div>
