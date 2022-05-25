@@ -61,8 +61,8 @@
                 </div>
                 <div class="detail-top">
                     <div class="detail-price">
-                        <span class="price-current">@ViewBag.productDetail.Price đ</span>
-                        <span class="price-old">@ViewBag.productDetail.Price đ</span>
+                        <span class="price-current">@ViewBag.productDetail.Calcula()đ</span>
+                        <span class="price-old">@ViewBag.productDetail.FormatPrice()đ</span>
                         <span class="price-percent">-@ViewBag.productDetail.Discount %</span>
                     </div>
                     <div class="product-code">#258922</div>
@@ -109,14 +109,14 @@
         <div class="product-Card">
             @foreach (var i in ViewBag.procutList)
             {
-               
+
                 <div class="card-item">
                     <img src="@i.Image" />
                     <div class="card-content">
                         <h3>@i.Name</h3>
-                        <p class="price-current">@i.Price đ</p>
+                        <p class="price-current">@i.Calcula()đ</p>
                         <div class="boxprice">
-                            <p class="price-old">@i.Price</p>
+                            <p class="price-old">@i.FormatPrice()đ</p>
                             <span class="percent"> -@i.Discount %</span>
                         </div>
                     </div>
@@ -134,6 +134,35 @@
         <form>
             <div class="cmt-text">
                 <textarea></textarea>
+                <div class="info-container">
+                    <div class="group-radios">
+                        <div class="group-radio">
+                            <input type="radio" />
+                            <label>Anh</label>
+                        </div>
+                        <div class="group-radio">
+                            <input type="radio" />
+                            <label>Chị</label>
+                        </div>
+                    </div>
+                    <div class="info-users">
+                        <div class="info-user">
+                            <input type="text" name="name" class="input-info" />
+                            <label class="lb-name">Họ và tên</label>
+                        </div>
+                        <div class="info-user">
+                            <input type="number" name="number" class="input-info" />
+                            <label class="lb-name">Số điện thoại</label>
+                        </div>
+                        <div class="info-user">
+                            <input type="email" name="Email" class="input-info" />
+                            <label class="lb-name">Email</label>
+                        </div>
+                        <div class="bnt-submit">
+                            <button type="submit" class="bt-submit">Gửi</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

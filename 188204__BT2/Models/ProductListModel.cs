@@ -12,6 +12,29 @@ namespace _188204__BT2.Models
         public string Image { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
-        
+        public string CovertNumber (decimal price)
+        {
+            var NewPrice = price.ToString();
+            var lenght = NewPrice.Length;
+            while(lenght>=0)
+            {
+               
+                    if (lenght - 3 > 0)
+                    {
+                        NewPrice = NewPrice.Insert(lenght - 3, ".");
+                    }
+                     lenght = lenght - 3;
+            }    
+            return NewPrice;
+        }
+        public string Calcula()
+        {
+            var price_current = Price - (Price * Discount) / 100;
+            return CovertNumber(price_current);
+        }
+        public string FormatPrice()
+        {
+            return CovertNumber(Price);
+        }
     }
 }

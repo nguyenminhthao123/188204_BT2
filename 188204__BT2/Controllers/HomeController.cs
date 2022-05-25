@@ -23,12 +23,12 @@ namespace _188204__BT2.Controllers
         {
             List<ProductListModel> productList = new List<ProductListModel>()
             {
-                new ProductListModel { ProductID=1,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=1399000,Discount=20},
+                new ProductListModel { ProductID=1,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=13990000,Discount=20},
                 new ProductListModel { ProductID=2,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/2.jpg",Price=1399000,Discount=20},
                 new ProductListModel { ProductID=3,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/3.jpg",Price=1399000,Discount=20},
                 new ProductListModel { ProductID=4,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/4.jpg",Price=1399000,Discount=20},
                 new ProductListModel { ProductID=5,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/5.jpg",Price=1399000,Discount=20},
-                new ProductListModel { ProductID=6,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=1399000,Discount=20},
+                new ProductListModel { ProductID=6,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=139900,Discount=20},
             };
             return productList;
         }
