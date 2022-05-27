@@ -7,7 +7,7 @@ namespace _188204__BT2.Models
 {
     public class CollectionDataModel
     {
-        public  ProductDetailModels ProductDetail { set; get; }
+        public ProductListModel ProductDeatail { set; get; }
         public List<ProductListModel> ProductList { set; get; }
     }
 }

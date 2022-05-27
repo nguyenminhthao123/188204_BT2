@@ -23,12 +23,12 @@ namespace _188204__BT2.Controllers
         {
             List<ProductListModel> productList = new List<ProductListModel>()
             {
-                new ProductListModel { ProductID=1,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=13990000,Discount=20},
-                new ProductListModel { ProductID=2,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/2.jpg",Price=1399000,Discount=20},
-                new ProductListModel { ProductID=3,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/3.jpg",Price=1399000,Discount=20},
-                new ProductListModel { ProductID=4,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/4.jpg",Price=1399000,Discount=20},
-                new ProductListModel { ProductID=5,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/5.jpg",Price=1399000,Discount=20},
-                new ProductListModel { ProductID=6,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=139900,Discount=20},
+                new ProductListModel { ProductID=1,Name="Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",Image="/Images/1.jpg",Price=629000,Discount=20,DetailProduct=GetProductDetail()},
+                new ProductListModel { ProductID=2,Name="Đồ chơi trẻ em: Lắp ráp chiến xe monster jam™ el toro loco™ Lego 42135 (247 chi tiết) - Màu ngẫu nhiên",Image="/Images/2.jpg",Price=799000,Discount=20,DetailProduct=GetProductDetail()},
+                new ProductListModel { ProductID=3,Name="Đồ chơi trẻ em: Lắp ráp xe cảnh sát truy đuổi tên cướp xe kem Lego 60315 (317 chi tiết) - Màu ngẫu nhiên",Image="/Images/3.jpg",Price=1399000,Discount=20,DetailProduct=GetProductDetail()},
+                new ProductListModel { ProductID=4,Name="Đồ chơi buổi biểu diễn ảo thuật nhào lộn Lego Friends 41686 (223 chi tiết)",Image="/Images/4.jpg",Price=649000,Discount=20,DetailProduct=GetProductDetail()},
+                new ProductListModel { ProductID=5,Name="Đồ chơi rồng đen của chúa tể Overlord Lego Ninjago 71742 (372 chi tiết)",Image="/Images/5.jpg",Price=869000,Discount=20,DetailProduct=GetProductDetail()},
+                new ProductListModel { ProductID=6,Name="Đồ chơi ngôi nhà trên cây Lego Friends 41679 (326 chi tiết)",Image="/Images/1.jpg",Price=899000,Discount=20,DetailProduct=GetProductDetail()},
             };
             return productList;
         }
@@ -110,11 +110,6 @@ namespace _188204__BT2.Controllers
         {
           var ProductDetail = new ProductDetailModels()
             {
-              ProductID=1,
-              Name= "Đồ chơi xe địa hình cứu hộ Lego City 60301 (157 chi tiết)",
-              Image= "/Images/1.jpg",
-              Price= 1399000,
-              Discount=20,
               InfoTeach = GetinfoTech(),
               Policy=GetPolicy(),
               Imagethump=GetImageThump(),
@@ -125,14 +120,20 @@ namespace _188204__BT2.Controllers
             return ProductDetail;
         }
 
-        public IActionResult Index()
+        public IActionResult Index( int id)
         {
             CollectionDataModel model = new CollectionDataModel();
-            model.ProductDetail = GetProductDetail();
+            var product = GetProductList().Find(x => x.ProductID == id);
+             
+            model.ProductDeatail = product;
             model.ProductList = GetProductList();
             return View(model);
         }
-
+       
+        public IActionResult DetailView ()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
         public IActionResult Error()

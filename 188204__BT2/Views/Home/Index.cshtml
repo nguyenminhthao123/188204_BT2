@@ -11,9 +11,9 @@
     <div class="detail">
         <div class="detail__left">
             <div class="box_fotorama">
-                <img class="main-img" src=" @Model.ProductDetail.Image" />
+                <img class="main-img" src=" @Model.ProductDeatail.Image" />
                 <div class="gallery">
-                    @foreach (var i in @Model.ProductDetail.Imagethump)
+                    @foreach (var i in @Model.ProductDeatail.DetailProduct.Imagethump)
                     {
                         <img src="@i.Img" />
                     }
@@ -36,7 +36,7 @@
                     <h2 class="article__content__title">thông tin sản phẩm</h2>
                     <h3>Đặc điểm nổi bật</h3>
                     <ul>
-                        @foreach (var i in Model.ProductDetail.ProductFeatures)
+                        @foreach (var i in @Model.ProductDeatail.DetailProduct.ProductFeatures)
                         {
                             <li>
                                 @i.NameFeature
@@ -45,7 +45,7 @@
                     </ul>
                     <h3>Hướng dẫn sử dụng</h3>
                     <ul>
-                        @foreach (var i in @Model.ProductDetail.UseManual)
+                        @foreach (var i in @Model.ProductDeatail.DetailProduct.UseManual)
                         {
                             <li>
                                 @i.context
@@ -58,13 +58,13 @@
         <div class="detail__right">
             <div class="box__productInfor">
                 <div class="detail-title">
-                    <h3>@Model.ProductDetail.Name</h3>
+                    <h3>@Model.ProductDeatail.Name</h3>
                 </div>
                 <div class="detail-top">
                     <div class="detail-price">
-                        <span class="price-current">@Model.ProductDetail.Calcula()đ</span>
-                        <span class="price-old">@Model.ProductDetail.FormatPrice()đ</span>
-                        <span class="price-percent">-@Model.ProductDetail.Discount %</span>
+                        <span class="price-current">@Model.ProductDeatail.Calcula()đ</span>
+                        <span class="price-old">@Model.ProductDeatail.FormatPrice()đ</span>
+                        <span class="price-percent">-@Model.ProductDeatail.Discount %</span>
                     </div>
                     <div class="product-code">#258922</div>
                 </div>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <ul class="policy">
-                @foreach (var i in @Model.ProductDetail.Policy)
+                @foreach (var i in @Model.ProductDeatail.DetailProduct.Policy)
                 {
                     <li>
                         <i class="@i.Icon"></i>
@@ -92,7 +92,7 @@
                 <p class="info__title">Thông tin chi tiết</p>
                 <div class="info-content">
                     <ul class="info-article">
-                        @foreach (var i in Model.ProductDetail.InfoTeach)
+                        @foreach (var i in Model.ProductDeatail.DetailProduct.InfoTeach)
                         {
                             <li>
                                 <p class="text1">@i.NameInfo</p>

@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using System.Net;
 
 namespace _188204__BT2
 {
@@ -46,11 +48,39 @@ namespace _188204__BT2
 
             app.UseAuthorization();
 
+            // code 400-500 thông báo lỗi ra màn hình 
+            app.UseStatusCodePages(appError =>
+            {
+                appError.Run(async context =>
+               {
+                   var respone = context.Response;
+                   var code = respone.StatusCode;
+                   var content = $@"<html>
+                                  <head>
+                                        <meta charset='UTF-8'/>
+                                        <title> Lỗi {code}</title>
+                                  </head>
+                                   <body>
+                                        <p style='color:red;font-size:30px'>có lỗi xảy ra: {code} - {(HttpStatusCode)code}</p>
+                                    </body>
+                                </html>";
+                   await respone.WriteAsync(content);
+               });
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                   name: "ProductDetail",
+                   pattern: "san-pham/{id}",
+                   defaults: new { controller = "Home", action = "Index", });
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=DetailView}/{id?}");
             });
         }
     }
