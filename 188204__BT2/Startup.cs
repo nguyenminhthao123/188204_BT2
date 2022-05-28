@@ -72,15 +72,15 @@ namespace _188204__BT2
             {
                 endpoints.MapControllerRoute(
                    name: "ProductDetail",
-                   pattern: "san-pham/{id}",
-                   defaults: new { controller = "Home", action = "Index", });
+                   pattern: "san-pham/id-{id}",
+                   defaults: new { controller = "Product", action = "DetailView", });
             });
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=DetailView}/{id?}");
+                    pattern: "{controller=Home}/{action=index}/{id?}");
             });
         }
     }
