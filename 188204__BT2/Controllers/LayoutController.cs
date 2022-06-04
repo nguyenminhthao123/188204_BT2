@@ -16,5 +16,10 @@ namespace _188204__BT2.Controllers
         {
             return View();
         }
+        
+        public IActionResult Commit()
+        {
+            return View();
+        }
     }
 }

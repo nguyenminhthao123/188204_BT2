@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace _188204__BT2.Models
 {
-    public class ProductFeaturesModel
+    public class SearchModels : ProductListModel
     {
-        public string NameFeature { set; get; }
-        public string NameFeatureLink { set; get; }
+        public string price_current { set; get; }
+        public string price_old { set; get; }
     }
 }

@@ -9,7 +9,7 @@ namespace _188204__BT2.Models
     {
         public int IdInfo { get; set; }
         public string NameInfo { get; set; }
-        public string ValueInfo { get; set; }
-       
+        public List<string> ValueInfo { get; set; }
+
     }
 }

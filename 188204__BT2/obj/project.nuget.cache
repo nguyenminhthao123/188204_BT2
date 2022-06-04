@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SHzw+P4imnXKCXBhh85GWdNMOpOd9mXMM+Twd9/uP1rqFsJv3YOTPi21K0cDGS8vhM/snntM2zbhrxzH1oFbDA==",
+  "dgSpecHash": "h3QsLYFexRsk5Am65Ka6Yh7w+A2Rn8MAWr4u30oK77Wpvg7r6MkHUlzMWod8dnqRfRtxgt8z0EYHF/rxs8NI9g==",
   "success": true,
   "projectFilePath": "D:\\COMPANY MWG\\Tesst\\188204__BT2\\188204__BT2\\188204__BT2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\17521\\.nuget\\packages\\newtonsoft.json\\13.0.2-beta1\\newtonsoft.json.13.0.2-beta1.nupkg.sha512"
+  ],
   "logs": []
 }

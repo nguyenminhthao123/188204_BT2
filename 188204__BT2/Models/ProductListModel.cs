@@ -13,19 +13,19 @@ namespace _188204__BT2.Models
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
         public ProductDetailModels DetailProduct { set; get; }
-        public string CovertNumber (decimal price)
+        public string CovertNumber(decimal price)
         {
             var NewPrice = price.ToString();
             var lenght = NewPrice.Length;
-            while(lenght>=0)
+            while (lenght >= 0)
             {
-               
-                    if (lenght - 3 > 0)
-                    {
-                        NewPrice = NewPrice.Insert(lenght - 3, ".");
-                    }
-                     lenght = lenght - 3;
-            }    
+
+                if (lenght - 3 > 0)
+                {
+                    NewPrice = NewPrice.Insert(lenght - 3, ".");
+                }
+                lenght = lenght - 3;
+            }
             return NewPrice;
         }
         public string Calcula()

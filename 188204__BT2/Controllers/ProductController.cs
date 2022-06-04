@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using _188204__BT2.Models;
-
 namespace _188204__BT2.Controllers
 {
     public class ProductController : Controller
@@ -29,14 +28,14 @@ namespace _188204__BT2.Controllers
         {
             List<infoTechModel> infoTeach = new List<infoTechModel>()
             {
-                new infoTechModel{ IdInfo = 1,NameInfo = "Thương hiệu", ValueInfo = "Thụy Sỹ", },
-                new infoTechModel{ IdInfo = 2,NameInfo = "Loại", ValueInfo = "Đồ chơi lắp ráp", },
-                new infoTechModel{ IdInfo = 3,NameInfo = "Độ tuổi", ValueInfo = "Từ 5 tuổi trở lên", },
-                new infoTechModel{ IdInfo = 4,NameInfo = "Chất liệu", ValueInfo = "Nhựa", },
-                new infoTechModel{ IdInfo = 5,NameInfo = "Kích thước hộp", ValueInfo = "38x26x6 cm", },
-                new infoTechModel{ IdInfo = 6,NameInfo = "Trọng lượng", ValueInfo = "724 g", },
-                new infoTechModel{ IdInfo = 7,NameInfo = "Lưu ý khi sử dụng", ValueInfo = "Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai", },
-                new infoTechModel{ IdInfo = 8,NameInfo = "Nơi sản xuất", ValueInfo = "Trung Quốc", },
+                new infoTechModel{ IdInfo = 1,NameInfo = "Thương hiệu", ValueInfo = new List<string>(){"Lego (Đan Mạch)" }, },
+                new infoTechModel{ IdInfo = 2,NameInfo = "Loại", ValueInfo = new List<string>(){"Đồ chơi bé trai","Đồ chơi lắp ráp" }, },
+                new infoTechModel{ IdInfo = 3,NameInfo = "Độ tuổi", ValueInfo = new List<string>(){"Từ 5 tuổi trở lên" }, },
+                new infoTechModel{ IdInfo = 4,NameInfo = "Chất liệu", ValueInfo = new List<string>(){"Nhựa" }, },
+                new infoTechModel{ IdInfo = 5,NameInfo = "Kích thước hộp", ValueInfo = new List<string>(){"38x26x6 cm" }, },
+                new infoTechModel{ IdInfo = 6,NameInfo = "Trọng lượng", ValueInfo = new List<string>(){"724 g" }, },
+                new infoTechModel{ IdInfo = 7,NameInfo = "Lưu ý khi sử dụng", ValueInfo = new List<string>(){"Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai" }, },
+                new infoTechModel{ IdInfo = 8,NameInfo = "Nơi sản xuất", ValueInfo = new List<string>(){"Trung Quốc" }, },
 
             };
             return infoTeach;
@@ -75,10 +74,10 @@ namespace _188204__BT2.Controllers
         {
             List<ProductFeaturesModel> Features = new List<ProductFeaturesModel>
             {
-                new ProductFeaturesModel {NameFeature="Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308 bao gồm 297 chi tiết."},
-                new ProductFeaturesModel {NameFeature="Bé có thể sáng tạo và tưởng tượng câu chuyện của mình."},
-                new ProductFeaturesModel {NameFeature="Đồ chơi lắp ráp giúp rèn luyện tính rỉ mỉ, sáng tạo của bé khi lắp ráp."},
-                new ProductFeaturesModel {NameFeature="Đồ chơi Lego City không có góc nhọn, thành phần độc hại nên an toàn cho bé."},
+                new ProductFeaturesModel {NameFeature=" bao gồm 297 chi tiết.",NameFeatureLink="Đồ chơi trạm cảnh sát tuần tra và cứu hỏa biển Lego City 60308"},
+                new ProductFeaturesModel {NameFeature="Bé có thể sáng tạo và tưởng tượng câu chuyện của mình.",NameFeatureLink=""},
+                new ProductFeaturesModel {NameFeature=" giúp rèn luyện tính rỉ mỉ, sáng tạo của bé khi lắp ráp.",NameFeatureLink="Đồ chơi lắp ráp"},
+                new ProductFeaturesModel {NameFeature=" không có góc nhọn, thành phần độc hại nên an toàn cho bé.",NameFeatureLink="Đồ chơi Lego City"},
 
             };
             return Features;
@@ -90,8 +89,9 @@ namespace _188204__BT2.Controllers
         {
             List<UseManualModel> useManua = new List<UseManualModel>
             {
-                new UseManualModel { context = "Lắp ráp các khớp nối với nhau theo hình trên bao bì."},
-                new UseManualModel { context = "Có thể sáng tạo theo trí tưởng tượng của bé."}
+                new UseManualModel { contextLink="Đồ chơi", context = "không dùng pin."},
+                new UseManualModel { contextLink="", context = "Lắp ráp các khớp nối với nhau theo hình trên bao bì."},
+                new UseManualModel { contextLink="", context = "Có thể sáng tạo theo trí tưởng tượng của bé."}
             };
             return useManua;
         }
@@ -119,5 +119,6 @@ namespace _188204__BT2.Controllers
             model.ProductList = GetProductList();
             return View(model);
         }
+
     }
 }

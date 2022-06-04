@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Chi chiết sản phẩm";
 }
 @model _188204__BT2.Models.CollectionDataModel;
 
@@ -11,7 +11,12 @@
     <div class="detail">
         <div class="detail__left">
             <div class="box_fotorama">
-                <img class="main-img" src=" @Model.ProductDeatail.Image" />
+                <div class="main-imgs">
+                    @foreach (var i in @Model.ProductDeatail.DetailProduct.Imagethump)
+                    {
+                        <img src="@i.Img" class="main-img" />
+                    }
+                </div>
                 <div class="gallery">
                     @foreach (var i in @Model.ProductDeatail.DetailProduct.Imagethump)
                     {
@@ -20,8 +25,8 @@
 
                 </div>
                 <div class="count">
-                    <span class="count-current">1</span>
-                    <span class="count-total">5</span>
+                    <span class="count-current"></span>
+                    <span class="count-total">@Model.ProductDeatail.DetailProduct.Imagethump.Count()</span>
                 </div>
                 <div class="prev-next-btn">
                     <span class="prev-btn"><i class="fa-solid fa-angle-left"></i></span>
@@ -39,7 +44,7 @@
                         @foreach (var i in @Model.ProductDeatail.DetailProduct.ProductFeatures)
                         {
                             <li>
-                                @i.NameFeature
+                                <a href="/home/index">@i.NameFeatureLink</a> @i.NameFeature
                             </li>
                         }
                     </ul>
@@ -48,7 +53,7 @@
                         @foreach (var i in @Model.ProductDeatail.DetailProduct.UseManual)
                         {
                             <li>
-                                @i.context
+                                <a href="/home/index">@i.contextLink</a> @i.context
                             </li>
                         }
                     </ul>
@@ -96,7 +101,22 @@
                         {
                             <li>
                                 <p class="text1">@i.NameInfo</p>
-                                <p class="text2">@i.ValueInfo</p>
+                                @{
+                                    if (@i.ValueInfo.Count >= 2)
+                                    {
+                                        <div class="text2-group">
+                                            @foreach (var item in @i.ValueInfo)
+                                            {
+                                                <p class="dot">@item</p>
+                                            }
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <p class="text2">@i.ValueInfo[0]</p>
+                                    }
+                                }
+
                             </li>
                         }
 
@@ -108,21 +128,10 @@
     <div class="detail-product">
         <p class="detail-product-title">Đồ chơi khác</p>
         <div class="product-Card">
-            @foreach (var i in @Model.ProductList)
+            @foreach (var product in @Model.ProductList)
             {
 
-                <div class="card-item">
-                    <img src="@i.Image" />
-                    <div class="card-content">
-                        <h3>@i.Name</h3>
-                        <p class="price-current">@i.Calcula()đ</p>
-                        <div class="boxprice">
-                            <p class="price-old">@i.FormatPrice()đ</p>
-                            <span class="percent"> -@i.Discount %</span>
-                        </div>
-                    </div>
-                    <div class="btn-buy">Chọn mua</div>
-                </div>
+                @await Component.InvokeAsync("ProductItem", product)
             }
         </div>
     </div>
@@ -164,50 +173,6 @@
         </form>
     </div>
 </section>
-<div class="commitment">
-    <ul>
-        <li>
-            <div class="li-icon">
-                <i class="icon-chinhhang"></i>
-            </div>
-            <div class="li-content">
-                <p>
-                    <span>
-                        100% Sản phẩm chính hãng
-                    </span>
-                    <br />
-                    hơn 100 thương hiệu nổi tiếng
-                </p>
-            </div>
-        </li>
-        <li>
-            <div class="li-icon">
-                <i class="icon-doitra"></i>
-            </div>
-            <div class="li-content">
-                <p>
-                    <span>1 Đổi 1 Trong Vòng 1 Tháng</span>
-                    <span class="li-note">(Tùy sản phẩm)</span>
-                    <br />
-                    Tại 49 cửa hàng trên toàn quốc
-                </p>
-                <a>Xem chi tiết</a>
-            </div>
-        </li>
-        <li>
-            <div class="li-icon">
-                <i class="icon-giaohang"></i>
-            </div>
-            <div class="li-content">
-                <p>
-                    <span>
-                        Miễn phí giao hàng
-                    </span>
-                    <br />
-                    cho đơn hàng 500.000đ trong 10km đầu tiên
-                </p>
-                <a>Xem chi tiết</a>
-            </div>
-        </li>
-    </ul>
-</div>
+<partial name="../Layout/commit.cshtml" />
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/slide.js"></script>

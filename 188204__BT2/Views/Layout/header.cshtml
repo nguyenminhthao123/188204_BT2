@@ -14,7 +14,12 @@
                     <i class="logo-ava"></i>
                 </a>
                 <form class="header-search">
-                    <input type="text" placeholder="Tìm sản phẩm, nhóm hàng, hãng..." />
+                    <input type="text" id="search-id" class="search" placeholder="Tìm sản phẩm, nhóm hàng, hãng..." autocomplete="off" />
+                    <div class="search-show">
+                        <div class="search-product">
+                            <p>Sản Phẩm gợi ý</p>
+                        </div>
+                    </div>
                 </form>
                 <div class="box-right">
                     <a class="add-cart">
@@ -474,3 +479,6 @@
         </div>
     </div>
 </header>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="/js/search.js"></script>
