@@ -75,6 +75,7 @@ namespace _188204__BT2
                    pattern: "san-pham/id-{id}",
                    defaults: new { controller = "Product", action = "DetailView", });
             });
+           
 
             app.UseEndpoints(endpoints =>
             {

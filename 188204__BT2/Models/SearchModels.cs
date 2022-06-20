@@ -7,7 +7,7 @@ namespace _188204__BT2.Models
 {
     public class SearchModels : ProductListModel
     {
-        public string price_current { set; get; }
-        public string price_old { set; get; }
+        public string Pricecurrent { set; get; }
+        public string Priceold { set; get; }
     }
 }

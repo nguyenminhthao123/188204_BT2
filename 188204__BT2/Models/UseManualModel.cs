@@ -7,7 +7,7 @@ namespace _188204__BT2.Models
 {
     public class UseManualModel
     {
-        public string context { set; get; }
-        public string contextLink { set; get; }
+        public string Context { set; get; }
+        public string ContextLink { set; get; }
     }
 }

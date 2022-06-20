@@ -7,7 +7,7 @@ namespace _188204__BT2.Models
 {
     public class ProductDetailModels
     {
-        public List<infoTechModel> InfoTeach { get; set; }
+        public List<InfoTechModel> InfoTeach { get; set; }
         public List<PolicyModel> Policy { get; set; }
         public List<ImagethumpModel> Imagethump { get; set; }
         public List<ProductFeaturesModel> ProductFeatures { get; set; }

@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<_188204__BT2.Models.CategoryList>;
+@{
+    var total = Model.Count();
+}
+@foreach (var item in Model)
+{
+    <li data-total=@total>
+        <div class="card-item">
+            <img src="@item.Image" />
+            <div class="card-content">
+                <h3>@item.Name</h3>
+                <p class="price-current">@item.Pricecurrent đ</p>
+                <div class="boxprice">
+                    <p class="price-old">@item.Priceold đ</p>
+                    <span class="percent"> -@item.Discount %</span>
+                </div>
+            </div>
+            <div class="btn-buy">Chọn mua</div>
+        </div>
+    </li>
+}
+

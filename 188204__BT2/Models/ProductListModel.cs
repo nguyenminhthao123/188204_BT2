@@ -12,6 +12,9 @@ namespace _188204__BT2.Models
         public string Image { get; set; }
         public decimal Price { get; set; }
         public decimal Discount { get; set; }
+        public int TypeCN { get; set; }
+        public int Type { get; set; }
+        public int Brand { get; set; }
         public ProductDetailModels DetailProduct { set; get; }
         public string CovertNumber(decimal price)
         {

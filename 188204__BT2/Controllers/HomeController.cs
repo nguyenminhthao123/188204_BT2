@@ -59,8 +59,8 @@ namespace _188204__BT2.Controllers
                     ProductID = item.ProductID,
                     Name = $"{item.Name}",
                     Image = $"{item.Image}",
-                    price_current = $"{item.Calcula()}",
-                    price_old = $"{item.FormatPrice()}",
+                    Pricecurrent = $"{item.Calcula()}",
+                    Priceold = $"{item.FormatPrice()}",
                     Discount = item.Discount,
                 });
             }
@@ -77,7 +77,10 @@ namespace _188204__BT2.Controllers
             if (searchkeyWork != null)
             {
                 List<SearchModels> product = GetSearchListProduct().Where(x => x.Name.ToLower().Contains(searchkeyWork.ToLower())).ToList();
-                value = JsonConvert.SerializeObject(product, Formatting.Indented, new JsonSerializerSettings
+                var kq = from itme in GetSearchListProduct()
+                         where itme.Name.ToLower().Contains(searchkeyWork.ToLower())
+                         select itme;
+                value = JsonConvert.SerializeObject(kq, Formatting.Indented, new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });

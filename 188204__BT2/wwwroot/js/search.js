@@ -1,4 +1,4 @@
-﻿$(document).ready(function (){
+﻿$(document).ready(function () {
     $('#search-id').keyup(function () {
         var searchkey = $('#search-id').val();
         $(".search-product-tt").remove();

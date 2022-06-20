@@ -1,0 +1,182 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*@model PagedList.IPagedList<_188204__BT2.Models.CategoryList>
+    @using PagedList.Mvc;*@
+
+<section id="category-page">
+    <div class="cate__title">
+        <p class="cate__txto1">177 Tã cho bé</p>
+    </div>
+    <div class="box-filter">
+        <div class="wapper__filter">
+            <div class="filter__item filter__total">
+                <div class="filter__item__titile">
+                    <i class="fa-filter"></i>
+                    Lọc
+                </div>
+                <div class="filter__show filter__show-total">
+                    <div class="close__filter"></div>
+                    <div class="filter__selected"></div>
+                    <div class="show-total-item">
+                        <p class="show-titile-txt">Hãng:</p>
+                        <div class="list-brand">
+                            <a data-brand="1"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118624/Bobby-200x120.png" /></a>
+                            <a data-brand="2"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118863/Huggies-200x120-1.png" /></a>
+                            <a data-brand="3"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118625/Moony-200x120.png" /></a>
+                            <a data-brand="4"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118862/Merries-200x120.png" /></a>
+                            <a data-brand="5"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/119050/Pamper-200x120.png" /></a>
+                            <a data-brand="6"><img src="https://cdn.tgdd.vn/2022/03/Sports/Images/164922/ta-quan-moony-man-be-trai-size-xl-38-mieng-cho-be-12-17kg-7(200×120px)(1)-200x120.png" /></a>
+                            <a data-brand="7"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/121689/httpscdn.tgdd.vn202111SportsImages121689Babymommy-200x120-1.png-removebg-preview-200x120.png" /></a>
+                        </div>
+                    </div>
+                    <!--<-->@*div class="show-total-item">
+                            <p class="show-titile-txt">Giá:</p>
+                            <div class="filter-list">
+                                <a class="btn-filter">Từ 100,000 - 200,000đ</a>
+                                <a class="btn-filter">Từ 200,000 - 300,000đ</a>
+                            </div>
+                        </div>*@
+                    <div class="show-total-item">
+                        <p class="show-titile-txt">Loại:</p>
+                        <div class="filter-list">
+                            <a class="btn-filter">Miếng lót sơ sinh</a>
+                            <a class="btn-filter">Tã dán</a>
+                            <a class="btn-filter">Tã quần</a>
+                            <a class="btn-filter">Tã vải</a>
+                            <a class="btn-filter">Tã người lớn</a>
+                        </div>
+                    </div>
+                    @*<div class="show-total-item">
+                            <p class="show-titile-txt">Cân nặng:</p>
+                            <div class="filter-list">
+                                <a class="btn-filter">Dưới 5kg</a>
+                                <a class="btn-filter">Từ 5kg - 10kg</a>
+                                <a class="btn-filter">Từ 10kg - 13kg</a>
+                                <a class="btn-filter">Từ 13kg - 16kg</a>
+                                <a class="btn-filter">Trên 16kg</a>
+                            </div>
+                        </div>*@
+                    <div class="show-total-item">
+                        <p class="show-titile-txt">Size:</p>
+                        <div class="filter-list">
+                            <a class="btn-filter" data-name="NB">NB</a>
+                            <a class="btn-filter" data-name="S">S</a>
+                            <a class="btn-filter" data-name="M">M</a>
+                            <a class="btn-filter" data-name="L">L</a>
+                            <a class="btn-filter" data-name="XL">XL</a>
+                            <a class="btn-filter" data-name="XXL">XXL</a>
+                            <a class="btn-filter" data-name="XXXL">XXXL</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="filter__item">
+                <div class="filter__item__titile">
+                    <span>Hãng</span>
+                </div>
+                <div class="filter__show">
+                    <div class="filter__show_list filter-list">
+                        <a class="btn-filter" data-brand="1"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118624/Bobby-200x120.png" /></a>
+                        <a class="btn-filter" data-brand="2"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118863/Huggies-200x120-1.png" /></a>
+                        <a class="btn-filter" data-brand="3"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118625/Moony-200x120.png" /></a>
+                        <a class="btn-filter" data-brand="4"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/118862/Merries-200x120.png" /></a>
+                        <a class="btn-filter" data-brand="5"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/119050/Pamper-200x120.png" /></a>
+                        <a class="btn-filter" data-brand="6"><img src="https://cdn.tgdd.vn/2022/03/Sports/Images/164922/ta-quan-moony-man-be-trai-size-xl-38-mieng-cho-be-12-17kg-7(200×120px)(1)-200x120.png" /></a>
+                        <a class="btn-filter" data-brand="7"><img src="https://cdn.tgdd.vn/2021/11/Sports/Images/121689/httpscdn.tgdd.vn202111SportsImages121689Babymommy-200x120-1.png-removebg-preview-200x120.png" /></a>
+                    </div>
+                    <div class="filter-button">
+                        <a class="btn-close">Chọn Lại</a>
+                        <a class="btn-filter-result">Xem<span></span></a>
+                    </div>
+                </div>
+            </div>
+            @*<div class="filter__item">
+                <div class="filter__item__titile">
+                    <span>Giá</span>
+                </div>
+                <div class="filter__show">
+                    <div class="filter-list">
+                        <a class="btn-filter">Từ 100,000 - 200,000đ</a>
+                        <a class="btn-filter">Từ 200,000 - 300,000đ</a>
+                    </div>
+                </div>
+            </div>*@
+            <div class="filter__item">
+                <div class="filter__item__titile">
+                    <span>Loại</span>
+                </div>
+                <div class="filter__show">
+                    <div class="filter-list">
+                        <a class="btn-filter" data-type="1">Miếng lót sơ sinh</a>
+                        <a class="btn-filter" data-type="2">Tã dán</a>
+                        <a class="btn-filter" data-type="3">Tã quần</a>
+                        <a class="btn-filter" data-type="4">Tã vải</a>
+                        <a class="btn-filter" data-type="5">Tã người lớn</a>
+                    </div>
+                    <div class="filter-button">
+                        <a class="btn-close">Chọn Lại</a>
+                        <a class="btn-filter-result">Xem<span></span></a>
+                    </div>
+                </div>
+            </div>
+            @*<div class="filter__item">
+                <div class="filter__item__titile">
+                    <span>Cân nặng</span>
+                </div>
+                <div class="filter__show">
+                    <div class="filter-list">
+                        <a class="btn-filter">Dưới 5kg</a>
+                        <a class="btn-filter">Từ 5kg - 10kg</a>
+                        <a class="btn-filter">Từ 10kg - 13kg</a>
+                        <a class="btn-filter">Từ 13kg - 16kg</a>
+                        <a class="btn-filter">Trên 16kg</a>
+                    </div>
+                </div>
+            </div>*@
+            <div class="filter__item">
+                <div class="filter__item__titile">
+                    <span>Size</span>
+                </div>
+                <div class="filter__show">
+                    <div class="filter-list">
+                        <a class="btn-filter" data-id="1">NB</a>
+                        <a class="btn-filter" data-id="2">S</a>
+                        <a class="btn-filter" data-id="3">M</a>
+                        <a class="btn-filter" data-id="4">L</a>
+                        <a class="btn-filter" data-id="5">XL</a>
+                        <a class="btn-filter" data-id="6">XXL</a>
+                        <a class="btn-filter" data-id="7">XXXL</a>
+                    </div>
+                    <div class="filter-button">
+                        <a class="btn-close">Chọn Lại</a>
+                        <a class="btn-filter-result">Xem<span></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-select">
+        <div class="sort-select">
+            <p class="click-sort">
+                Xắp xếp:
+                <span class="sort-show"></span>
+            </p>
+            <div class="sort-select-main">
+                <p data-id="1"><i></i>% Giảm Giá</p>
+                <p data-id="2"><i></i>Giá cao đên thấp</p>
+                <p data-id="3"><i></i>Giá thấp đến cao</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-productbox">
+        <ul class="productList">
+        </ul>
+    </div>
+</section>
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/category.js"></script>
+<script src="~/js/sort.js"></script>

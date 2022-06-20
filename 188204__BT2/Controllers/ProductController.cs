@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,18 +25,18 @@ namespace _188204__BT2.Controllers
         }
 
         /* Khai báo data InfoTeach*/
-        public List<infoTechModel> GetinfoTech()
+        public List<InfoTechModel> GetinfoTech()
         {
-            List<infoTechModel> infoTeach = new List<infoTechModel>()
+            List<InfoTechModel> infoTeach = new List<InfoTechModel>()
             {
-                new infoTechModel{ IdInfo = 1,NameInfo = "Thương hiệu", ValueInfo = new List<string>(){"Lego (Đan Mạch)" }, },
-                new infoTechModel{ IdInfo = 2,NameInfo = "Loại", ValueInfo = new List<string>(){"Đồ chơi bé trai","Đồ chơi lắp ráp" }, },
-                new infoTechModel{ IdInfo = 3,NameInfo = "Độ tuổi", ValueInfo = new List<string>(){"Từ 5 tuổi trở lên" }, },
-                new infoTechModel{ IdInfo = 4,NameInfo = "Chất liệu", ValueInfo = new List<string>(){"Nhựa" }, },
-                new infoTechModel{ IdInfo = 5,NameInfo = "Kích thước hộp", ValueInfo = new List<string>(){"38x26x6 cm" }, },
-                new infoTechModel{ IdInfo = 6,NameInfo = "Trọng lượng", ValueInfo = new List<string>(){"724 g" }, },
-                new infoTechModel{ IdInfo = 7,NameInfo = "Lưu ý khi sử dụng", ValueInfo = new List<string>(){"Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai" }, },
-                new infoTechModel{ IdInfo = 8,NameInfo = "Nơi sản xuất", ValueInfo = new List<string>(){"Trung Quốc" }, },
+                new InfoTechModel{ IdInfo = 1,NameInfo = "Thương hiệu", ValueInfo = new List<string>(){"Lego (Đan Mạch)" }, },
+                new InfoTechModel{ IdInfo = 2,NameInfo = "Loại", ValueInfo = new List<string>(){"Đồ chơi bé trai","Đồ chơi lắp ráp" }, },
+                new InfoTechModel{ IdInfo = 3,NameInfo = "Độ tuổi", ValueInfo = new List<string>(){"Từ 5 tuổi trở lên" }, },
+                new InfoTechModel{ IdInfo = 4,NameInfo = "Chất liệu", ValueInfo = new List<string>(){"Nhựa" }, },
+                new InfoTechModel{ IdInfo = 5,NameInfo = "Kích thước hộp", ValueInfo = new List<string>(){"38x26x6 cm" }, },
+                new InfoTechModel{ IdInfo = 6,NameInfo = "Trọng lượng", ValueInfo = new List<string>(){"724 g" }, },
+                new InfoTechModel{ IdInfo = 7,NameInfo = "Lưu ý khi sử dụng", ValueInfo = new List<string>(){"Có các chi tiết nhỏ, không dùng cho trẻ dưới 3 tuổi, tránh nguy cơ tiềm ẩn khi trẻ sử dụng sai" }, },
+                new InfoTechModel{ IdInfo = 8,NameInfo = "Nơi sản xuất", ValueInfo = new List<string>(){"Trung Quốc" }, },
 
             };
             return infoTeach;
@@ -89,9 +90,9 @@ namespace _188204__BT2.Controllers
         {
             List<UseManualModel> useManua = new List<UseManualModel>
             {
-                new UseManualModel { contextLink="Đồ chơi", context = "không dùng pin."},
-                new UseManualModel { contextLink="", context = "Lắp ráp các khớp nối với nhau theo hình trên bao bì."},
-                new UseManualModel { contextLink="", context = "Có thể sáng tạo theo trí tưởng tượng của bé."}
+                new UseManualModel { ContextLink="Đồ chơi", Context = "không dùng pin."},
+                new UseManualModel { ContextLink="", Context = "Lắp ráp các khớp nối với nhau theo hình trên bao bì."},
+                new UseManualModel { ContextLink="", Context = "Có thể sáng tạo theo trí tưởng tượng của bé."}
             };
             return useManua;
         }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace _188204__BT2.Models
 {
-    public class infoTechModel
+    public class InfoTechModel
     {
         public int IdInfo { get; set; }
         public string NameInfo { get; set; }
